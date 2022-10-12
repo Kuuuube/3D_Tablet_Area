@@ -17,28 +17,28 @@ namespace Three_Dimensional_Tablet_Area
         {
             if (Flip_Splitting)
             {
-                flip_split_int = -1;
+                flip_split_int = 1;
             }
             else
             {
-                flip_split_int = 1;
+                flip_split_int = 0;
             }
 
             if (hover_store >= Split_Hover_Value && Split_X)
             {
-                input.X = (input.X + 1) / 2 * flip_split_int;
+                input.X = (input.X + 1) / 2 - (1 * flip_split_int);
             }
             if (hover_store < Split_Hover_Value && Split_X)
             {
-                input.X = (input.X - 1) / 2 * flip_split_int;
+                input.X = (input.X - 1) / 2 + (1 * flip_split_int);
             }
             if (hover_store < Split_Hover_Value && Split_Y)
             {
-                input.Y = (input.Y - 1) / 2 * flip_split_int;
+                input.Y = (input.Y - 1) / 2 + (1 * flip_split_int);
             }
             if (hover_store >= Split_Hover_Value && Split_Y)
             {
-                input.Y = (input.Y + 1) / 2 * flip_split_int;
+                input.Y = (input.Y + 1) / 2 - (1 * flip_split_int);
             }
 
             return input;
